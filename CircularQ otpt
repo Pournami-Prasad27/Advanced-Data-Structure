@@ -1,0 +1,33 @@
+Circular Queue
+
+Press 1: Insert an element
+Press 2: Delete an element
+Press 3: Display the element
+Enter your choice1
+Enter the element which is to be inserted25
+
+Enter your choice1
+Enter the element which is to be inserted54
+
+Enter your choice1
+Enter the element which is to be inserted98
+
+Enter your choice1
+Enter the element which is to be inserted36
+
+Enter your choice3
+
+Elements in a Queue are :25=>54=>98=>36=>
+Enter your choice2
+
+The dequeued element is 25
+Enter your choice2
+
+The dequeued element is 54
+Enter your choice2
+
+The dequeued element is 98
+Enter your choice3
+
+Elements in a Queue are :36=>
+Enter your choice
