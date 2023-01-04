@@ -1,0 +1,19 @@
+Enter no. of vertices:5
+
+Enter the adjacency matrix:
+0 10 0 30 200
+10 0 30 0 0
+0 50 20 10 0
+30 0 20 0 60
+100 0 10 80 0
+
+Enter the starting node:0
+
+Distance of node1=10
+Path=1<-0
+Distance of node2=40
+Path=2<-1<-0
+Distance of node3=30
+Path=3<-0
+Distance of node4=90
+Path=4<-3<-0
