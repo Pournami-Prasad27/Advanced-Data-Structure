@@ -1,0 +1,82 @@
+Doubly Linked List
+
+1.Insert in begining
+2.Insert at last
+3.Insert at any random location
+4.Delete from Beginning
+5.Delete from last
+6.Delete the node after the given data
+7.Search
+8.Show
+9.Exit
+
+*********Main Menu*********
+
+Enter your choice?
+1
+
+Enter Item value55
+
+Node inserted
+
+Enter your choice?
+1
+
+Enter Item value68
+
+Node inserted
+
+Enter your choice?
+2
+
+Enter value84
+
+node inserted
+
+Enter your choice?
+3
+Enter the location2
+Enter value20
+
+node inserted
+
+Enter your choice?
+8
+
+ printing values...
+68
+55
+84
+20
+
+Enter your choice?
+7
+
+Enter item which you want to search?
+20
+
+item found at location 4 
+Enter your choice?
+4
+
+node deleted
+
+Enter your choice?
+6
+
+ Enter the data after which the node is to be deleted : 55
+
+node deleted
+
+Enter your choice?
+5
+
+node deleted
+
+Enter your choice?
+8
+
+ printing values...
+55
+
+Enter your choice?
