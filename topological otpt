@@ -1,0 +1,13 @@
+Enter the no of vertices:
+4
+Enter the adjacency matrix:
+Enter row 1
+0 0 1 1
+Enter row 2
+0 0 1 1
+Enter row 3
+1 0 1 0
+Enter row 4
+1 1 1 1
+
+The topological order is:1 2 3 4
