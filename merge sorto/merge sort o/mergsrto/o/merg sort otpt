@@ -1,0 +1,26 @@
+Enter the size of first array   4
+
+Enter the array elements
+Enter element 1-6
+
+Enter element 2-7
+
+Enter element 3-10
+
+Enter element 4-12
+Enter the size of second array  5
+
+Enter the array elements
+
+Enter element 1-2
+
+Enter element 2-3
+
+Enter element 3-14
+
+Enter element 4-15
+
+Enter element 5-19
+
+Array after merge sort 
+2       3       6       7       10      12      14      15      19
