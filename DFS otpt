@@ -1,0 +1,23 @@
+Enter the number of vertices5
+Enter the vertices
+Enter the vertex 1 4
+
+Enter the vertex 2 5
+
+Enter the vertex 3 6
+
+Enter the vertex 4 7
+
+Enter the vertex 5 8
+Enter the number of edges5
+Enter the edge 1 4 6
+Enter the edge 2 4 5
+Enter the edge 3 5 7
+Enter the edge 4 5 8
+Enter the edge 5 5 6
+Traversed: 4
+Traversed: 6
+Traversed: 5
+Traversed: 8
+Traversed: 7
+
