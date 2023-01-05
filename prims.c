@@ -1,79 +1,83 @@
 #include<stdio.h>
-
-int visited[10]={0}, cost[10][10], min, mincost=0;
-int input(int);
-int display(int);
-int prims(int);
-
-int input(int num)
-{
-	int i, j;
-	printf("\nEnter the adjacency matrix\n\n");
-	for(i=1; i<=num; i++)
-	{
-		for(j=1; j<=num; j++)
-		{
-			printf("value of cost[%d][%d] : ",i,j);
-			scanf("%d", &cost[i][j]);
-		}
-	}
-	return 0;
-}
-int display(int num)
-{
-	int i, j;
-	printf("\nThe cost of adjacency matrix\n\n");
-	for(i=1; i<=num; i++)
-	{
-		for(j=1; j<=num; j++)
-		{
-			printf("%d", cost[i][j]);
-			printf("\t");
-		}
-		printf("\n");
-	}
-	return 0;
-}
-
-int prims(int num)
-{
-	int i, j, ne=1, a, b, u, v;
-	for(i=1; i<=num; i++)
-	{
-		for(j=1; j<=num; j++)
-		{
-			if(cost[i][j]==0)
-			cost[i][j]=999;
-		}
-	}
-	visited[1]=1; 
-	while(ne < num) 
-	{
-		for(i=1,min=999;i<=num;i++)
-		for(j=1;j<=num;j++)
-		if(cost[i][j]< min)
-		if(visited[i]!=0)
-		{
-			min=cost[i][j];
-			a=u=i; 
-			b=v=j;
-		}
-		printf("\n Edge %d:(%d - %d) cost:%d",ne++,a,b,min);
- 		mincost=mincost+min;
- 		visited[b]=1;
-		cost[a][b]=cost[b][a]=999;
-	}
-	printf("\n\n\n Minimun cost=%d",mincost);
-}
+#include<stdlib.h>
+#define infinity 9999
+#define MAX 20
+int G[MAX][MAX],spanning[MAX][MAX],n;
+int prims();
 int main()
 {
-	int num;
-	printf("\n\t\t\tPrim's Algorithm");
-	printf("\n\nEnter the number of nodes= ");
-	scanf("%d", &num);
-	input(num);
-	display(num);
-	prims(num);
-
-	return 0;
+int i,j,total_cost;
+printf("Prim's Algorithm");
+printf("\nEnter no. of vertices:");
+scanf("%d",&n);
+printf("\nEnter the adjacency matrix:\n");
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+scanf("%d",&G[i][j]);
+total_cost=prims();
+printf("\nspanning tree matrix:\n");
+for(i=0;i<n;i++)
+{
+49
+printf("\n");
+for(j=0;j<n;j++)
+printf("%d\t",spanning[i][j]);
+}
+printf("\n\nTotal cost of spanning tree=%d",total_cost);
+return 0;
+}
+int prims()
+{
+int cost[MAX][MAX];
+int u,v,min_distance,distance[MAX],from[MAX];
+int visited[MAX],no_of_edges,i,min_cost,j;
+//create cost[][] matrix,spanning[][]
+for(i=0;i<n;i++)
+for(j=0;j<n;j++)
+{
+if(G[i][j]==0)
+cost[i][j]=infinity;
+else
+cost[i][j]=G[i][j];
+spanning[i][j]=0;
+}
+//initialise visited[],distance[] and from[]
+distance[0]=0;
+50
+visited[0]=1;
+for(i=1;i<n;i++)
+{
+distance[i]=cost[0][i];
+from[i]=0;
+visited[i]=0;
+}
+min_cost=0; //cost of spanning tree
+no_of_edges=n-1; //no. of edges to be added
+while(no_of_edges>0)
+{
+//find the vertex at minimum distance from the tree
+min_distance=infinity;
+for(i=1;i<n;i++)
+if(visited[i]==0&&distance[i]<min_distance)
+{
+v=i;
+min_distance=distance[i];
+}
+u=from[v];
+//insert the edge in spanning tree
+spanning[u][v]=distance[v];
+spanning[v][u]=distance[v];
+no_of_edges--;
+51
+visited[v]=1;
+//updated the distance[] array
+for(i=1;i<n;i++)
+if(visited[i]==0&&cost[i][v]<distance[i])
+{
+distance[i]=cost[i][v];
+from[i]=v;
+}
+min_cost=min_cost+cost[u][v];
+}
+return(min_cost);
 }
